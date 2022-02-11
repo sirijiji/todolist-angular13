@@ -16,8 +16,9 @@ export class InputTodoListComponent implements OnInit {
     this.items = new Array<Item>();
   }
 
-  addItem(value: string) {
-    this.items.push(new Item(value));
+  addItem(value: HTMLInputElement) {
+    this.items.push(new Item(value.value));
+    value.value = '';
   }
 
   removeItem(value: string) {
