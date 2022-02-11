@@ -1,0 +1,32 @@
+<div class="grid grid-cols-3 gap-4 place-content-center">
+  <div class="..."></div>
+  <div class="...">
+
+    <input #inputId class="shadow appearance-none border rounded py-1 px-1 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text">
+    <button class="ml-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-1 rounded" (click)="addItem(inputId.value)">Ajouter</button>
+
+  </div>
+  <div class="..."></div>
+
+  <div class="..."></div>
+  <div class="col-span-2 content-center" *ngIf="items.length !== 0">
+    <table class="table-fixed">
+      <thead>
+      <tr>
+        <th>Chose à faire</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="mb-1 shadow-xl bg-blue-200 font-bold py-1 px-1 rounded" *ngFor="let item of items">
+        <td>{{item.value}}</td>
+        <td><button class="ml-2 bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-1 rounded"
+                    (click)="removeItem(item.value)">Supprimer</button></td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+
+</div>
